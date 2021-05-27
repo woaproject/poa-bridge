@@ -1,26 +1,23 @@
 # WOA-Vapory Bridge
 
-[![Join the chat at https://gitter.im/poanetwork/poa-bridge](https://badges.gitter.im/poanetwork/poa-bridge.svg)](https://gitter.im/poanetwork/poa-bridge?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/poanetwork/poa-bridge.svg?columns=all)](https://waffle.io/poanetwork/poa-bridge)
-
 **NOTE: This repository is not currently supported and is not used in production. Please see the Token Bridge repo at https://github.com/poanetwork/token-bridge for the current production version**
 
 
-Software, written in Rust, used by *POA bridge validators* to faciliate proof-of-authority based bridging of POA native coins to tokens on **another** Ethereum-based blockchain.
+Software, written in Rust, used by *WOA bridge validators* to faciliate proof-of-authority based bridging of WOA native coins to tokens on **another** Vapory-based blockchain.
 
-The validators work with the POA bridge contracts to convert ether on one chain into the same amount of ERC20 tokens on the other and back.
+The validators work with the WOA bridge contracts to convert ether on one chain into the same amount of VRC20 tokens on the other and back.
 
 This software was designed to work in conjunction with the following projects. Current compatability is unknown.
 
-* [POA Bridge UI](https://github.com/poanetwork/bridge-ui)
-* [POA Bridge Smart Contracts](https://github.com/poanetwork/poa-bridge-contracts)
-* [POA Bridge Monitoring service](https://github.com/poanetwork/bridge-monitor)
-* [POA Bridge Deployment scripts](https://github.com/poanetwork/deployment-bridge)
+* [WOA Bridge UI](https://github.com/woaprojet/bridge-ui)
+* [WOA Bridge Smart Contracts](https://github.com/woaproject/woa-bridge-contracts)
+* [WOA Bridge Monitoring service](https://github.com/woaproject/bridge-monitor)
+* [WOA Bridge Deployment scripts](https://github.com/woaproject/deployment-bridge)
 
 ### Functionality
 
 The bridge connects two chains (`home` and `foreign`). When a user deposits ether into the
-bridge contract contract on `home` they get the same amount of ERC20 tokens on `foreign`,
+bridge contract contract on `home` they get the same amount of VRC20 tokens on `foreign`,
 and they can convert them back as well.
 
 #### Deposit
@@ -33,16 +30,16 @@ and they can convert them back as well.
 
 ### Difference from Parity Bridge
 
-Although the POA bridge was initially based on the [Parity Bridge](https://github.com/paritytech/parity-bridge), it
+Although the WOA bridge was initially based on the [Parity Bridge](https://github.com/paritytech/parity-bridge), it
 was re-worked to include:
   * support of a gas price oracle introduced;
   * RPC is used instead of IPC;
   * sending of bridge approvals enhanced, increasing performance dramatically;
   * error handling improved to be compatible with Linux systemd facility;
   * bridge configuration parameters are fetched from bridge contracts so they don't need to be synchronized among several bridge instances; 
-  * bridge contracts were segregated into [the separate project](https://github.com/poanetwork/poa-bridge-contracts) and their deployment
+  * bridge contracts were segregated into [the separate project](https://github.com/woaproject/woa-bridge-contracts) and their deployment
     is independent from the Rust side of the bridge. Now bridge contracts:
-    * are separate from ERC20 
+    * are separate from VRC20 
     * are upgradable; you don't need to re-configure bridge instances and DApps to use new version of contracts
     * allow a set of validators to be changed without neeeding to re-deploy thebridge contracts 
 
@@ -55,7 +52,7 @@ Requires `solc` to be in `$PATH`: [installation instructions.](https://solidity.
 Assuming you've cloned the bridge (`git clone git@github.com:poanetwork/poa-bridge.git`), run
 
 ```
-cd poa-bridge
+cd woa-bridge
 make
 ```
 
