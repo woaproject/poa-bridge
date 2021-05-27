@@ -1,8 +1,5 @@
 # WOA-Vapory Bridge
 
-**NOTE: This repository is not currently supported and is not used in production. Please see the Token Bridge repo at https://github.com/poanetwork/token-bridge for the current production version**
-
-
 Software, written in Rust, used by *WOA bridge validators* to faciliate proof-of-authority based bridging of WOA native coins to tokens on **another** Vapory-based blockchain.
 
 The validators work with the WOA bridge contracts to convert ether on one chain into the same amount of VRC20 tokens on the other and back.
